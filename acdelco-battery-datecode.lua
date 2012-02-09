@@ -1,7 +1,7 @@
 #!/usr/bin/env lua
 
 function getMonthName(num)
-	return os.date("%B", os.time{ year = 2000, month = num, day = 1}))
+	return os.date("%B", os.time{ year = 2000, month = num, day = 1})
 end
 
 
@@ -33,7 +33,7 @@ function decodeDatecode(datecode)
 	end
 
 	print "Sorry, can't decode that date code!"
-	
+
 	os.exit(1)
 end
 
