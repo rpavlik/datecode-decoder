@@ -28,7 +28,7 @@ function decodeDatecode(datecode)
 			-- year base. TODO
 			date.year = 2000 + yeardigit
 			date.month = month
-			return ("%s %d"):format(date.year, getMonthName(month)), date
+			return ("%s %d"):format(getMonthName(month), date.year), date
 		end
 	end
 
