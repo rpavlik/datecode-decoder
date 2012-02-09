@@ -1,0 +1,3 @@
+[submodule "lunatest"]
+	path = lunatest
+	url = git://github.com/silentbicycle/lunatest.git
