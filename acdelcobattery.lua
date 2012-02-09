@@ -1,4 +1,3 @@
-#!/usr/bin/env lua
 
 local function getMonthName(num)
 	return os.date("%B", os.time{ year = 2000, month = num, day = 1})
