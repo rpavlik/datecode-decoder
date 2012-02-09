@@ -1,17 +1,17 @@
 #!/usr/bin/env lua
 
-function getMonthName(num)
+local function getMonthName(num)
 	return os.date("%B", os.time{ year = 2000, month = num, day = 1})
 end
 
 
-function letterToMonth(letter)
+local function letterToMonth(letter)
 	local monthcode = ("ABCDEFGHJKLM"):find(letter:upper())
 	return monthcode
 end
 
 -- Returns a fully-detailed string, then a table containing an approximation for use by os.time
-function decodeDatecode(datecode)
+local function decodeDatecode(datecode)
 	local date = {
 		day = 1 -- dummy - unknown
 	}
@@ -32,16 +32,8 @@ function decodeDatecode(datecode)
 		end
 	end
 
-	print "Sorry, can't decode that date code!"
+	return nil, "Sorry, can't decode that date code!"
 
-	os.exit(1)
 end
 
-
-if #arg ~= 1 then
-	io.stderr:write("Please pass the date code as the first command line argument.")
-	os.exit(1)
-end
-
-local datestring = decodeDatecode(arg[1])
-print(datestring)
+return decodeDatecode
